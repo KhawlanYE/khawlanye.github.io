@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Khawlan Alawadhi | Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <h1 class="logo">Khawlan Alawadhi</h1>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="home" class="hero">
+    <h2>AI & Data Science Student</h2>
+    <p>I am a second-year AI & Data Science student at Zuyd University, interested in machine learning, data analysis, and AI systems.</p>
+    <a class="btn" href="#projects">View My Projects</a>
+  </section>
+
+  <section id="about" class="section">
+    <h2>About Me</h2>
+    <p>
+      My name is Khawlan Alawadhi. I am building experience in machine learning,
+      software engineering, dashboards, and applied AI through university projects.
+      I enjoy creating practical solutions that combine data, models, and usable interfaces.
+    </p>
+  </section>
+
+  <section id="projects" class="section">
+    <h2>Projects</h2>
+
+    <div class="filters">
+      <button onclick="filterProjects('all')">All</button>
+      <button onclick="filterProjects('ai')">AI</button>
+      <button onclick="filterProjects('ml')">Machine Learning</button>
+      <button onclick="filterProjects('software')">Software</button>
+    </div>
+
+    <div class="project-grid">
+      <div class="project-card ai" onclick="toggleDetails('asl')">
+        <h3>ASL Translator</h3>
+        <p>AI-OPS project with ML system and Streamlit UI.</p>
+        <div id="asl" class="details">
+          <p>Built a sign language translation system using computer vision, FastAPI, Docker, RabbitMQ, PostgreSQL, and Streamlit.</p>
+          <a href="https://github.com/inevitablySour/ASL-Translator" target="_blank">View GitHub</a>
+        </div>
+      </div>
+
+      <div class="project-card ml" onclick="toggleDetails('cycling')">
+        <h3>Cycling Race Prediction</h3>
+        <p>Machine learning model for Top-20 race finishers.</p>
+        <div id="cycling" class="details">
+          <p>Used data cleaning, feature engineering, XGBoost, and evaluation metrics like MAE and Spearman correlation.</p>
+        </div>
+      </div>
+
+      <div class="project-card software" onclick="toggleDetails('cmas')">
+        <h3>CMAS Patient Management</h3>
+        <p>Java backend healthcare system with SQLite.</p>
+        <div id="cmas" class="details">
+          <p>Designed a command-line healthcare system with role-based login, DAO pattern, SQLite database, and OOP principles.</p>
+          <a href="https://github.com/KhawlanYE/JDMTracker" target="_blank">View GitHub</a>
+        </div>
+      </div>
+
+      <div class="project-card ml" onclick="toggleDetails('grant')">
+        <h3>Grant Success Prediction</h3>
+        <p>Random Forest model with Power BI dashboard.</p>
+        <div id="grant" class="details">
+          <p>Built a predictive model for grant success and visualized insights with Power BI and Streamlit.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="section">
+    <h2>Skills</h2>
+    <ul class="skills-list">
+      <li>Python</li>
+      <li>Machine Learning</li>
+      <li>Power BI</li>
+      <li>SQL</li>
+      <li>Java</li>
+      <li>Docker</li>
+      <li>FastAPI</li>
+      <li>Streamlit</li>
+    </ul>
+  </section>
+
+  <section id="contact" class="section">
+    <h2>Contact</h2>
+    <p>GitHub: <a href="https://github.com/KhawlanYE" target="_blank">github.com/KhawlanYE</a></p>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
