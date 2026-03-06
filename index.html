@@ -3,103 +3,234 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Khawlan Alawadhi | Portfolio</title>
+  <title>Khawlan Alawadhi | AI & Data Science Portfolio</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
+  <header class="header">
     <nav class="navbar">
-      <h1 class="logo">Khawlan Alawadhi</h1>
+      <a href="#home" class="logo">Khawlan Alawadhi</a>
+
       <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
+
+      <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode">
+        🌙
+      </button>
     </nav>
   </header>
 
-  <section id="home" class="hero">
-    <h2>AI & Data Science Student</h2>
-    <p>I am a second-year AI & Data Science student at Zuyd University, interested in machine learning, data analysis, and AI systems.</p>
-    <a class="btn" href="#projects">View My Projects</a>
-  </section>
+  <main>
+    <section id="home" class="hero">
+      <div class="hero-text">
+        <p class="eyebrow">AI & Data Science Student</p>
+        <h1>Hello, I’m Khawlan</h1>
+        <p class="hero-description">
+          I am a second-year AI & Data Science student at Zuyd University.
+          I enjoy building machine learning models, interactive dashboards,
+          backend systems, and practical AI solutions for real-world problems.
+        </p>
 
-  <section id="about" class="section">
-    <h2>About Me</h2>
-    <p>
-      My name is Khawlan Alawadhi. I am building experience in machine learning,
-      software engineering, dashboards, and applied AI through university projects.
-      I enjoy creating practical solutions that combine data, models, and usable interfaces.
-    </p>
-  </section>
-
-  <section id="projects" class="section">
-    <h2>Projects</h2>
-
-    <div class="filters">
-      <button onclick="filterProjects('all')">All</button>
-      <button onclick="filterProjects('ai')">AI</button>
-      <button onclick="filterProjects('ml')">Machine Learning</button>
-      <button onclick="filterProjects('software')">Software</button>
-    </div>
-
-    <div class="project-grid">
-      <div class="project-card ai" onclick="toggleDetails('asl')">
-        <h3>ASL Translator</h3>
-        <p>AI-OPS project with ML system and Streamlit UI.</p>
-        <div id="asl" class="details">
-          <p>Built a sign language translation system using computer vision, FastAPI, Docker, RabbitMQ, PostgreSQL, and Streamlit.</p>
-          <a href="https://github.com/inevitablySour/ASL-Translator" target="_blank">View GitHub</a>
+        <div class="hero-buttons">
+          <a class="btn primary" href="#projects">View Projects</a>
+          <a class="btn secondary" href="https://www.linkedin.com/in/khawlan-alawadhi-81a19b28b" target="_blank">LinkedIn</a>
+          <a class="btn secondary" href="https://github.com/KhawlanYE" target="_blank">GitHub</a>
         </div>
       </div>
 
-      <div class="project-card ml" onclick="toggleDetails('cycling')">
-        <h3>Cycling Race Prediction</h3>
-        <p>Machine learning model for Top-20 race finishers.</p>
-        <div id="cycling" class="details">
-          <p>Used data cleaning, feature engineering, XGBoost, and evaluation metrics like MAE and Spearman correlation.</p>
-        </div>
+      <div class="hero-image-card">
+        <img src="profile.jpg" alt="Portrait photo for portfolio" class="profile-image" />
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="section-title">
+        <p class="section-label">About</p>
+        <h2>About Me</h2>
       </div>
 
-      <div class="project-card software" onclick="toggleDetails('cmas')">
-        <h3>CMAS Patient Management</h3>
-        <p>Java backend healthcare system with SQLite.</p>
-        <div id="cmas" class="details">
-          <p>Designed a command-line healthcare system with role-based login, DAO pattern, SQLite database, and OOP principles.</p>
-          <a href="https://github.com/KhawlanYE/JDMTracker" target="_blank">View GitHub</a>
-        </div>
+      <div class="card">
+        <p>
+          My name is Khawlan Alawadhi. I am building my experience through projects in
+          machine learning, software engineering, applied AI, dashboards, and deployment.
+          My work focuses on combining technical solutions with usability, so that models
+          and systems are not only functional, but also useful for real users.
+        </p>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <div class="section-title">
+        <p class="section-label">Portfolio</p>
+        <h2>Projects</h2>
       </div>
 
-      <div class="project-card ml" onclick="toggleDetails('grant')">
-        <h3>Grant Success Prediction</h3>
-        <p>Random Forest model with Power BI dashboard.</p>
-        <div id="grant" class="details">
-          <p>Built a predictive model for grant success and visualized insights with Power BI and Streamlit.</p>
+      <div class="filters">
+        <button class="filter-btn active" onclick="filterProjects('all', event)">All</button>
+        <button class="filter-btn" onclick="filterProjects('ai', event)">AI</button>
+        <button class="filter-btn" onclick="filterProjects('ml', event)">Machine Learning</button>
+        <button class="filter-btn" onclick="filterProjects('software', event)">Software</button>
+      </div>
+
+      <div class="project-grid">
+        <article class="project-card ai">
+          <div class="project-top">
+            <span class="tag">AI Systems</span>
+            <h3>ASL Translator</h3>
+            <p>
+              Real-time sign language recognition system built with machine learning,
+              computer vision, and a microservice architecture.
+            </p>
+          </div>
+
+          <button class="details-btn" onclick="toggleDetails('asl-details')">
+            View Details
+          </button>
+
+          <div id="asl-details" class="details">
+            <p>
+              This project used FastAPI, RabbitMQ, PostgreSQL, Docker, MediaPipe,
+              and a Random Forest model. I contributed to the project concept and built
+              an additional Streamlit interface for interacting with the system.
+            </p>
+            <div class="project-links">
+              <a href="https://github.com/inevitablySour/ASL-Translator" target="_blank">GitHub</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card ml">
+          <div class="project-top">
+            <span class="tag">Machine Learning</span>
+            <h3>Cycling Race Prediction</h3>
+            <p>
+              Predicting Top-20 finishers in professional cycling races using historical
+              race and rider data.
+            </p>
+          </div>
+
+          <button class="details-btn" onclick="toggleDetails('cycling-details')">
+            View Details
+          </button>
+
+          <div id="cycling-details" class="details">
+            <p>
+              The project used feature engineering, XGBoost, and time-based validation.
+              I contributed to evaluation and validation, including interpretation of model
+              performance using MAE and ranking metrics.
+            </p>
+          </div>
+        </article>
+
+        <article class="project-card software">
+          <div class="project-top">
+            <span class="tag">Software Engineering</span>
+            <h3>CMAS Patient Management</h3>
+            <p>
+              Java backend prototype for managing patient records, CMAS scores,
+              and laboratory data.
+            </p>
+          </div>
+
+          <button class="details-btn" onclick="toggleDetails('cmas-details')">
+            View Details
+          </button>
+
+          <div id="cmas-details" class="details">
+            <p>
+              Built with Java, SQLite, JDBC, and OOP principles. The project includes
+              role-based access, CRUD functionality, database design, and backend testing.
+            </p>
+            <div class="project-links">
+              <a href="https://github.com/KhawlanYE/JDMTracker" target="_blank">GitHub</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card ml">
+          <div class="project-top">
+            <span class="tag">Data Science</span>
+            <h3>Grant Success Prediction</h3>
+            <p>
+              Predictive model and Power BI dashboard for analyzing the success probability
+              of grant applications.
+            </p>
+          </div>
+
+          <button class="details-btn" onclick="toggleDetails('grant-details')">
+            View Details
+          </button>
+
+          <div id="grant-details" class="details">
+            <p>
+              Built using Python, Random Forest, Streamlit, and Power BI. The project focused
+              on predictive analytics, dashboard storytelling, and decision support for grant strategy.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="skills" class="section">
+      <div class="section-title">
+        <p class="section-label">Skills</p>
+        <h2>Technical Stack</h2>
+      </div>
+
+      <div class="skills-grid">
+        <div class="card">
+          <h3>Programming</h3>
+          <ul class="skills-list">
+            <li>Python</li>
+            <li>Java</li>
+            <li>SQL</li>
+            <li>JavaScript</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Data & AI</h3>
+          <ul class="skills-list">
+            <li>Machine Learning</li>
+            <li>Scikit-learn</li>
+            <li>XGBoost</li>
+            <li>MediaPipe</li>
+            <li>Power BI</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Tools</h3>
+          <ul class="skills-list">
+            <li>GitHub</li>
+            <li>Docker</li>
+            <li>FastAPI</li>
+            <li>Streamlit</li>
+            <li>SQLite</li>
+          </ul>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="skills" class="section">
-    <h2>Skills</h2>
-    <ul class="skills-list">
-      <li>Python</li>
-      <li>Machine Learning</li>
-      <li>Power BI</li>
-      <li>SQL</li>
-      <li>Java</li>
-      <li>Docker</li>
-      <li>FastAPI</li>
-      <li>Streamlit</li>
-    </ul>
-  </section>
+    <section id="contact" class="section">
+      <div class="section-title">
+        <p class="section-label">Contact</p>
+        <h2>Get in Touch</h2>
+      </div>
 
-  <section id="contact" class="section">
-    <h2>Contact</h2>
-    <p>GitHub: <a href="https://github.com/KhawlanYE" target="_blank">github.com/KhawlanYE</a></p>
-  </section>
+      <div class="card contact-card">
+        <p>You can find me here:</p>
+        <div class="hero-buttons">
+          <a class="btn primary" href="https://www.linkedin.com/in/khawlan-alawadhi-81a19b28b" target="_blank">LinkedIn</a>
+          <a class="btn secondary" href="https://github.com/KhawlanYE" target="_blank">GitHub</a>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <script src="script.js"></script>
 </body>
